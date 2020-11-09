@@ -1,0 +1,51 @@
+<%- include("partials/header") %>
+
+<div class="ui container" style="width: 60%; margin-top: 50px;">
+    <h1>RESTful Blog App</h1>
+<div class="ui segments">
+<% blogs.forEach(element => {%>
+    <div class="ui segment">
+    <h2><%= element.title %></h2>
+    <p><%= element.created.toDateString() %></p>
+    <img style= "margin: 10px; width: 30%;"src=<%= element.image %>
+    <p><%= element.content.substring(0,100) %>...</p>
+    <button class="ui violet basic button"><a href="/blogs/<%= element._id %>">Read More</a></button>
+    </div>
+<%    }); %>
+</div>
+</div>      
+<%- include("partials/footer") %>
+<!-- 
+<div class="ui segments">
+    <div class="ui segment">
+      <p>Top</p>
+    </div>
+    <div class="ui segments">
+      <div class="ui segment">
+        <p>Nested Top</p>
+      </div>
+      <div class="ui segment">
+        <p>Nested Middle</p>
+      </div>
+      <div class="ui segment">
+        <p>Nested Bottom</p>
+      </div>
+    </div>
+    <div class="ui segment">
+      <p>Middle</p>
+    </div>
+    <div class="ui horizontal segments">
+      <div class="ui segment">
+        <p>Top</p>
+      </div>
+      <div class="ui segment">
+        <p>Middle</p>
+      </div>
+      <div class="ui segment">
+        <p>Bottom</p>
+      </div>
+    </div>
+    <div class="ui segment">
+      <p>Bottom</p>
+    </div>
+  </div> -->

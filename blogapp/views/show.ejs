@@ -1,0 +1,23 @@
+<%- include("partials/header") %>
+
+<div class="ui container segments" style="width: 55%;">
+    <div class="ui segment">
+        <h2><%= blog.title %></h2>
+        <p><%= blog.created.getDate() %>-<%= blog.created.getMonth() %>-<%= blog.created.getYear() %></p>
+    </div>
+    <div class="ui center aligned segment">
+        <img src=<%= blog.image %> >
+    </div>
+    <div class="ui segment">
+    <h2>Blog Description</h2>
+    <p><%= blog.content %></p>
+    </div>
+    <div class="ui center aligned segment">
+        <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+            <button class="ui violet basic button">Delete</button>
+            <button class="ui violet basic button"><a href="/blogs/<%= blog._id %>/edit">edit</a></button>
+        </form>
+    </div>
+</div>
+
+<%- include("partials/footer") %>
